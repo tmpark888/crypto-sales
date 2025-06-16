@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ ТОЛЬКО 72 ЧАСА - Секретная крипто-система</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b69 100%);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .warning {
+            background: #ff4444;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .main-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+
+        .video-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 50px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .video-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 18px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .story-section {
+            background: linear-gradient(135deg, rgba(255,107,53,0.1), rgba(247,147,30,0.1));
+            border-radius: 20px;
+            padding: 50px;
+            margin: 50px 0;
+            border: 2px solid #ff6b35;
+        }
+
+        .story-title {
+            font-size: 36px;
+            color: #ff6b35;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .money-highlight {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-shadow: 0 0 10px rgba(0,255,136,0.5);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #1a1a3e, #2d1b69);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #ff6b35;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 32px;
+            color: #00ff88;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timer-section {
+            background: linear-gradient(45deg, #ff4444, #ff6b35);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 50px 0;
+            animation: urgency 3s infinite;
+        }
+
+        @keyframes urgency {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,68,68,0.5); }
+            50% { box-shadow: 0 0 40px rgba(255,68,68,0.8); }
+        }
+
+        .timer {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            border-radius: 25px;
+            padding: 60px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            padding: 25px 50px;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .telegram-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+            border: 2px solid #0088cc;
+        }
+
+        .telegram-note {
+            font-size: 18px;
+            color: #0088cc;
+            margin-bottom: 20px;
+        }
+
+        .process-steps {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        .step-number {
+            background: #ff6b35;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #888;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 100px;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 18px;
+            }
+            
+            .video-container iframe {
+                height: 250px;
+            }
+            
+            .timer {
+                font-size: 32px;
+            }
+            
+            .cta-button {
+                padding: 20px 30px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="warning">
+        ⚠️ ТОЛЬКО 72 ЧАСА
+    </div>
+
+    <div class="header">
+        <div class="container">
+            <h1 class="main-title">
+                Мой друг с зарплатой 25 тысяч стал миллионером за 2 недели отпуска
+            </h1>
+            <p class="subtitle">
+                Пока лежал на пляже, его крипто-система заработала <span class="money-highlight">$2.000.000</span><br>
+                Теперь он показал мне ВСЕ свои секреты...
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="video-section">
+            <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px;">
+                🎥 Смотрите эксклюзивное видео
+            </h2>
+            <div class="video-container">
+                <iframe src="https://rutube.ru/play/embed/85d8f36dfef60e2ed850885000b86bc8" allowfullscreen></iframe>
+            </div>
+            <div class="video-note">
+                В этом видео я рассказываю всю правду о системе Александра
+            </div>
+        </div>
+
+        <div class="telegram-section">
+            <div class="telegram-note">
+                📱 После просмотра видео готовы получить стартер?
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>Напишите мне в Telegram</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>Я задам вам пару вопросов</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>Если вы адекватный и нам подходите - дам ссылку на оплату</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>Вы оплачиваете и получаете доступ к системе</div>
+                </div>
+            </div>
+            <a href="https://t.me/Vinograd888" class="cta-button" target="_blank">
+                💬 НАПИСАТЬ В TELEGRAM
+            </a>
+        </div>
+
+        <div class="story-section">
+            <h2 class="story-title">История Александра</h2>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                <span class="highlight">Александр</span> — обычный парень из провинции. Зарплата 25к, ипотека на 25 лет, двое детей.
+            </p>
+            <p style="font-size: 18px; margin-bottom: 30px;">
+                Уехал в отпуск на 2 недели обычным "работягой". Вернулся <span class="money-highlight">долларовым миллионером</span>.
+            </p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">8 млн ₽</div>
+                    <div>Range Rover — купил не торгуясь</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12 млн ₽</div>
+                    <div>Porsche — просто потому что "красивая"</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20 квартир</div>
+                    <div>Подряд — весь город обсуждал</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">€1.5M</div>
+                    <div>Вилла в Испании — к концу года</div>
+                </div>
+            </div>
+
+            <p style="font-size: 20px; text-align: center; color: #ffd700; font-weight: bold;">
+                Весь секрет — в автоматической системе, которая работает даже когда вы спите.
+            </p>
+        </div>
+
+        <div class="timer-section">
+            <h2 style="font-size: 36px; margin-bottom: 20px;">
+                ⏰ ОКНО ВОЗМОЖНОСТЕЙ ЗАКРЫВАЕТСЯ
+            </h2>
+            <p style="font-size: 20px; margin-bottom: 20px;">
+                Александр согласился раскрыть систему только 300 людям
+            </p>
+            <div class="timer" id="countdown">
+                70ч 59м
+            </div>
+            <p style="font-size: 18px; color: #ffcccc;">
+                После этого — доступ закроют навсегда
+            </p>
+        </div>
+
+        <div class="cta-section">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #fff;">
+                💎 ПОЛУЧИТЬ СИСТЕМУ СЕЙЧАС
+            </h2>
+            <p style="font-size: 18px; margin-bottom: 30px; color: #fff;">
+                Переход в закрытый Telegram-бот<br>
+                <em>Бесплатно. Без спама. Только проверенная информация.</em>
+            </p>
+            <a href="https://t.me/Vinograd888" class="cta-button" target="_blank">
+                📱 НАПИСАТЬ В TELEGRAM
+            </a>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.05); border-radius: 15px; padding: 40px; margin: 50px 0; border-left: 5px solid #ffd700;">
+            <p style="font-size: 18px; font-style: italic; text-align: center;">
+                <span class="highlight">"Алексей, я покажу тебе всю систему,"</span> — сказал Александр, — 
+                <span class="highlight">"но взамен расскажи людям правду. Хочу, чтобы это прекратилось — весь этот беспредел в интернете про крипту."</span>
+            </p>
+        </div>
+
+        <div style="text-align: center; font-size: 18px; color: #ffd700; margin: 40px 0;">
+            <p>Консультацию у Александра купить нельзя — он мультимиллионер и вообще не светится.</p>
+            <p>Но систему он согласился раскрыть. Один раз. И только сейчас.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>Свяжитесь со мной в Telegram для получения доступа</p>
+            <p><a href="https://t.me/Vinograd888" style="color: #0088cc;">@Vinograd888</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Простой таймер обратного отсчета
+        function updateTimer() {
+            const timerElement = document.getElementById('countdown');
+            const now = new Date().getTime();
+            const endTime = now + (70 * 60 * 60 * 1000) + (59 * 60 * 1000); // 70 часов 59 минут от текущего времени
+            
+            const interval = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+                
+                const hours = Math.floor(distance / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                
+                if (distance < 0) {
+                    timerElement.innerHTML = "ВРЕМЯ ИСТЕКЛО";
+                    clearInterval(interval);
+                } else {
+                    timerElement.innerHTML = hours + "ч " + minutes + "м";
+                }
+            }, 1000);
+        }
+        
+        updateTimer();
+
+        // Плавная анимация при скролле
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.stat-card, .step');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Инициализация элементов для анимации
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.stat-card, .step');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(50px)';
+                element.style.transition = 'all 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>
